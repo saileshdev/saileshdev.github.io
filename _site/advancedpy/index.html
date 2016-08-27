@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]--><!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]--><!--[if gt IE 8]><!--><html class="no-js">
+<!--<![endif]--> <head> <meta charset="UTF-8"> <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <title>Power of python – Evolving perceptions</title> <meta name="description" content="A space where I pen down my views and experiences"> <meta name="keywords" content="python, advanced"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="http://127.0.0.1:4000/assets/img/logo.jpg"> <meta name="twitter:title" content="Power of python"> <meta name="twitter:description" content="A bird’s eye view of some advanced concepts in Python"> <meta name="twitter:site" content="@sailesh_dev"> <meta name="twitter:creator" content="@sailesh_dev"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="Power of python"> <meta property="og:description" content="A bird’s eye view of some advanced concepts in Python"> <meta property="og:url" content="http://127.0.0.1:4000/advancedpy/"> <meta property="og:site_name" content="Evolving perceptions"> <meta property="og:image" content="http://127.0.0.1:4000/assets/img/logo.jpg"> <link rel="canonical" href="http://127.0.0.1:4000/advancedpy/"> <link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Evolving perceptions Feed"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- CSS --> <link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/main.css"> <!-- JS --> <script src="http://127.0.0.1:4000/assets/js/modernizr-3.3.1.custom.min.js"></script> <!-- Favicons --> <link rel="apple-touch-icon" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-precomposed.png"> <link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-72x72.png"> <link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-114x114.png"> <link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-144x144.png"> <link rel="shortcut icon" type="image/png" href="http://127.0.0.1:4000/favicon.png"> <link rel="shortcut icon" href="http://127.0.0.1:4000/favicon.ico"> <!-- Background Image --> <style type="text/css">body {background-image:url(http://127.0.0.1:4000/assets/img/placeholder-big.jpg); background-repeat: no-repeat; background-size: cover; }</style> <!-- Post Feature Image --> </head> <body> <nav id="dl-menu" class="dl-menuwrapper" role="navigation"> <button class="dl-trigger">Open Menu</button> <ul class="dl-menu"> <li><a href="http://127.0.0.1:4000/">Home</a></li> <li> <a href="#">About</a> <ul class="dl-submenu"> <li> <img src="http://127.0.0.1:4000/assets/img/logo.jpg" alt="Evolving perceptions photo" class="author-photo"> <h4>Evolving perceptions</h4> <p>A space where I pen down my views and experiences</p> </li> <li><a href="http://127.0.0.1:4000/about/"><span class="btn btn-inverse">Learn More</span></a></li> <li> <a href="http://twitter.com/sailesh_dev" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a> </li> <li> <a href="http://linkedin.com/in/sailesh-dev-2822b77b" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a> </li> <li> <a href="http://github.com/saileshdev" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a> </li> </ul>
+<!-- /.dl-submenu --> </li> <li> <a href="#">Posts</a> <ul class="dl-submenu"> <li><a href="http://127.0.0.1:4000/posts/">All Posts</a></li> <li><a href="http://127.0.0.1:4000/tags/">All Tags</a></li> </ul> </li> <li><a href="http://127.0.0.1:4000/projects/">Projects</a></li> </ul>
+<!-- /.dl-menu --> </nav><!-- /.dl-menuwrapper --> <!-- Header --> <header class="header" role="banner"> <div class="wrapper animated fadeIn"> <div class="content"> <div class="post-title "> <h1>Power of python</h1> <h4>18 Mar 2016</h4> <p class="reading-time"> <i class="fa fa-clock-o"></i> Reading time ~28 minutes </p>
+<!-- /.entry-reading-time --> <a class="btn zoombtn" href="http://127.0.0.1:4000/posts/"> <i class="fa fa-chevron-left"></i> </a> </div> <h2 id="namespaces">Namespaces</h2> <p>There are totally 3 namespaces in python:</p> <ol> <li>Built-in namespace: This is where all the built-in functions like len(),etc are defined</li> <li>Global namespace</li> <li>Local namespace(variable declared locally inside a function are not accessible outside)</li> </ol> <p>To use a global variable inside a local namespace we need to use the ‘global’ keyword follwed by the var name to access it locally.</p> <hr> <h2 id="modules">Modules</h2> <p>Modules allow us to group behaviour into modules. Module in python is essentially a file, thats it. Lets say we have a file named my_module.py(a simple python file) and it contains a variable name my_var and a function named my_func. Lets say we are now in a file name sample.py. We can import the module in the file in the following ways:</p> <h3 id="method-1">Method 1:</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">my_module</span>
+<span class="c"># to access the function or var we need to use module_name.attrib</span>
+<span class="c"># we can create another var named my_var in this namespace</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">my_var</span><span class="p">)</span>
+<span class="n">my_module</span><span class="o">.</span><span class="n">my_func</span><span class="p">()</span>
+</code></pre></div> <h3 id="alternate-method">Alternate method:</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">my_var</span><span class="p">,</span> <span class="n">my_func</span>
+<span class="c">#when using from we need not use module_name.atrib wecan directly access</span>
+<span class="c">#so we cannot create a var with the same name my_var in this namespace</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+<span class="n">my_func</span><span class="p">()</span>
+</code></pre></div> <p>This means we are not importing everything in the file, we are importing only variables and functions that are needed/used. This is good wrt resourse management.</p> <h3 id="last-method">Last method:</h3> <p>We can use <code class="highlighter-rouge">from my_module import *</code>, which means we are essentially importing everything from the file. It loads the local namespace of the application we are importing into and hence generally not a good practice.</p> <p>When importing a module, pyhton intially checks if the module is in the same dir as that of the file. If it is then it imports it. If not then it checks the path set by the PYTHONPATH env variable, we can change/edit it. It is by default set to /usr/local/bin/python3.4, ie this is the directory it checks for if the module is not found in the same directory as that of the application file.</p> <h3 id="built-in-and-external-modules">Built-in and External Modules:</h3> <p>The python standard library has a no of <a href="https://docs.python.org/3/library/index.html">in-built modules</a> which we can use for our own purposes.</p> <p><code class="highlighter-rouge">import module_name</code></p> <p><a href="https://pypi.python.org/pypi">External modules</a> are stored in this repository. Its called the PyPI index. Allows us to leverage other people’s work and not re-invent the wheel.</p> <p>Steps to include an external module:</p> <ol> <li>Select python3 packages from the left side of the web page</li> <li>Select the required package</li> <li>Download the .tar.gz file</li> <li>Unzip the package and locate the setup.py file</li> <li>Move to that directory</li> <li>Run python3 setup.py install</li> <li>Now import module_name in code and start using</li> <li>To check if it has installed properly, open the REPL and import module_name shouldnt give us any error</li> </ol> <hr> <h2 id="unit-testing">Unit testing</h2> <p>Python standard library includes a unit test module. It is very powerful and flexible to use.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">saytime</span> <span class="c">#module to test</span>
+<span class="kn">import</span> <span class="nn">unittest</span> <span class="c">#import this module for unit-testing </span>
+
+<span class="k">class</span> <span class="nc">TestSaytime</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span> <span class="c">#this is how we define test suite</span>
+    <span class="c">#the class name can be anything but should inherit from TestCase</span>
+
+    <span class="c">#the setup method sets up the variables needed for the test case</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nums</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c">#this method is a test case</span>
+        <span class="c"># make sure the numbers translate correctly</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s">'oh'</span><span class="p">,</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'four'</span><span class="p">,</span> <span class="s">'five'</span><span class="p">,</span>
+            <span class="s">'six'</span><span class="p">,</span> <span class="s">'seven'</span><span class="p">,</span> <span class="s">'eight'</span><span class="p">,</span> <span class="s">'nine'</span><span class="p">,</span> <span class="s">'ten'</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nums</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">saytime</span><span class="o">.</span><span class="n">numwords</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">numwords</span><span class="p">(),</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="c">#assertEqual compares the passed 2 values and throws error if not equal</span>
+
+    <span class="k">def</span> <span class="nf">test_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c">#this is another test case</span>
+        <span class="n">time_tuples</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> 
+            <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">59</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">time_words</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s">"midnight"</span><span class="p">,</span>
+            <span class="s">"one past midnight"</span><span class="p">,</span>
+            <span class="s">"eleven o'clock"</span><span class="p">,</span>
+            <span class="s">"noon"</span><span class="p">,</span>
+            <span class="s">"one o'clock"</span><span class="p">,</span>
+            <span class="s">"twenty-nine past noon"</span><span class="p">,</span>
+            <span class="s">"half past noon"</span><span class="p">,</span>
+            <span class="s">"twenty-nine til one"</span><span class="p">,</span>
+            <span class="s">"quarter past noon"</span><span class="p">,</span>
+            <span class="s">"half past noon"</span><span class="p">,</span>
+            <span class="s">"quarter til one"</span><span class="p">,</span>
+            <span class="s">"one til noon"</span><span class="p">,</span>
+            <span class="s">"quarter past eleven"</span><span class="p">,</span>
+            <span class="s">"one til midnight"</span><span class="p">,</span>
+            <span class="s">"one til one"</span><span class="p">,</span>
+            <span class="s">"one til two"</span><span class="p">,</span>
+            <span class="s">"OOR"</span><span class="p">,</span>
+            <span class="s">"OOR"</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">time_tuples</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">saytime</span><span class="o">.</span><span class="n">saytime</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">words</span><span class="p">(),</span> <span class="n">time_words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span> <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span> 
+<span class="c">#we call the main func from the unittest module</span>
+</code></pre></div> <hr> <h2 id="comprehensions">Comprehensions</h2> <p>This concept allows us to build sequences in an easy and elegant way.</p> <h3 id="list-comprehensions">List comprehensions:</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+	<span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="c"># raised to power 2</span>
+	<span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> 
+
+<span class="c">#same code can be achieved in a single line using comprehension</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="c">#lets enter a conditional statement in this looping construct</span>
+
+<span class="c">#lets say we need only the numbers greater than 5 be raised to power 2</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div> <h3 id="set-comprehensions">Set comprehensions:</h3> <p>set1= {x ** 2 for x in range(10)}</p> <h3 id="dictionary-comprehensions">Dictionary comprehensions:</h3> <p>dict1 = {x:x+1 for x in range(10)}</p> <p>dic2 = {x:v**2 for k,v in zip([a,b,c],range(3))} #{a:0,b:1,c:2}</p> <hr> <h2 id="lambdasanonymous-functions">Lambdas(Anonymous functions)</h2> <p>Python allows us to create anonymous functions(no name). We can store these functions in variables.</p> <p><code class="highlighter-rouge">lambda arg1,arg2...argN: expression</code></p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="c">#type(a) will be &lt;type 'function'&gt;</span>
+<span class="c">#a(2,10) will return 20</span>
+
+<span class="c">#lets combine lambda funct and comprehensions where we use nested loops</span>
+
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+	<span class="n">prod_list</span> <span class="o">=</span><span class="p">[]</span>
+	<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+			<span class="n">product</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+			<span class="n">prod_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">prod_list</span> <span class="o">+</span> <span class="nb">list</span> <span class="c">#concatenates the list passed with prod_list</span>
+
+<span class="c">#the same code can be achieved in a single line</span>
+<span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="nb">list</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span>
+</code></pre></div> <p>Lambdas are frequently used in conjuction with 3 other python functions:</p> <ol> <li>Map</li> <li>Filter</li> <li>Reduce</li> </ol> <h3 id="map">Map:</h3> <p>Takes a function and sequence as an arg and applies the function to every element in the sequence and returns a map object which is iterable</p> <p><code class="highlighter-rouge">map((lambda a: a*10), list)</code></p> <p>Map function can also take muliple sequences as arguments.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c">#takes 2 sequences as parameters</span>
+<span class="s">"""so this will return a map obj where the result is addition of individual indexes of a and b ie [5,7,9]"""</span>
+
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="c">#takes 3 sequences as parameters</span>
+<span class="s">"""so this will return a map obj where the result is addition of individual indexes of a,b and c ie [12,15,18]"""</span>
+</code></pre></div> <h3 id="filter">Filter:</h3> <p>The filter function also takes a function and the sequence as argument. It extracts all the elements in the sequence for which the function returns true. It returns back a filter object which is iterable.</p> <p><code class="highlighter-rouge">filter(lambda a:a&gt;5,list)</code></p> <h3 id="reduce">Reduce:</h3> <p>Takes a function and a sequence as an argument. It takes the first 2 elements of the sequence and feeds it to the function and returns back the result. This result and the third arg is fed as arguments to the func which returns a result back. This keeps happening until the last element of the sequence is exhausted. So the final result of the filter func will be a single value.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#finding max element using reduce</span>
+<span class="n">max_find</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span> <span class="k">else</span> <span class="n">b</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">max_elem</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">max_find</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span>
+<span class="c"># returns 8(max element in the list)</span>
+</code></pre></div> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">functools</span>
+<span class="n">functools</span><span class="o">.</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="c"># returns the sum of the list`</span>
+</code></pre></div> <p>Use functools.reduce() if you really need it; however, 99 percent of the time an explicit for loop is more readable.</p> <hr> <h2 id="other-built-in-functions">Other built-in functions</h2> <h3 id="zip">Zip:</h3> <p>zip() makes an iterator that aggregates elements from each of the iterables. Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted. With a single iterable argument, it returns an iterator of 1-tuples. With no arguments, it returns an empty iterator.</p> <p>Infact we can define zip function ourselves:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="o">*</span><span class="n">iterables</span><span class="p">):</span>
+    <span class="c"># zip('ABCD', 'xy') --&gt; Ax By</span>
+    <span class="n">sentinel</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+    <span class="n">iterators</span> <span class="o">=</span> <span class="p">[</span><span class="nb">iter</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">iterables</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">iterators</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">iterators</span><span class="p">:</span>
+            <span class="n">elem</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">elem</span> <span class="ow">is</span> <span class="n">sentinel</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#Zip the lists together</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c">#[(1, 4), (2, 5), (3, 6)]</span>
+
+<span class="c"># Note how tuples are returned if one iterabel is longer than the other</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c">#[(1, 4), (2, 5), (3, 6)]</span>
+
+<span class="c"># Zipping dicts together(just the keys are zipped)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s">'c'</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s">'d'</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">)</span>
+<span class="c"># [('a', 'c'), ('b', 'd')]</span>
+
+<span class="c"># Keys and values of dict as tuples</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="c"># [('a',1),('b',2)]</span>
+
+<span class="c">#lets use zip a to switch the keys and values of the two dictionaries</span>
+<span class="k">def</span> <span class="nf">switch</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">):</span>
+    <span class="n">dout</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">for</span> <span class="n">d1key</span><span class="p">,</span><span class="n">d2val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+        <span class="n">dout</span><span class="p">[</span><span class="n">d1key</span><span class="p">]</span> <span class="o">=</span> <span class="n">d2val</span>
+    
+    <span class="k">return</span> <span class="n">dout</span>
+
+<span class="c">#lets use zip to return the max of corres elements in 2 lists</span>
+<span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+	<span class="k">print</span> <span class="nb">max</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+
+<span class="c">#it can also be achieved using map</span>
+<span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">pair</span><span class="p">),</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+</code></pre></div> <h3 id="enumerate">Enumerate:</h3> <p>Enumerate allows us to keep a count as we iterate through an object. It does this by returning a tuple in the form (count,element).</p> <p>We can write this function ourselves:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">n</span><span class="p">,</span> <span class="n">elem</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'c'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span><span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">item</span>
+<span class="c">#outputs a and b</span>
+</code></pre></div> <h3 id="all-and-any">All and Any:</h3> <p>all() and any() are built-in functions in Python that allow us to convienently check for boolean matching in an iterable. all() will return True if all elements in an iterable are True. It is the same as this function code:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">element</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div> <p>any() will return True if any of the elements in the iterable are True. It is equivalent to the following funciton code:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">any</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div> <h3 id="complex">Complex:</h3> <p>complex() returns a complex number with the value real + imag*1j or converts a string or number to a complex number. If the first parameter is a string, it will be interpreted as a complex number and the function must be called without a second parameter. The second parameter can never be a string. Each argument may be any numeric type (including complex). If imag is omitted, it defaults to zero and the constructor serves as a numeric conversion like int and float. If both arguments are omitted, returns 0j. If we are dealing with math or engineering that requires complex numbers (such as dynamics,control systems, or impedence of a circuit) this is a useful tool to have in Python.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Create 2+3j</span>
+<span class="nb">complex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="c"># (2+3j)</span>
+<span class="c">#We can also pass strings:</span>
+<span class="nb">complex</span><span class="p">(</span><span class="s">'12+2j'</span><span class="p">)</span>
+<span class="c"># (12+2j)</span>
+</code></pre></div> <hr> <h2 id="stacks">Stacks</h2> <p>Lets implement stacks using Lists in python. Stack works on LIFO(last in first out) principle.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="c">#lets push elements onto the top of the stack</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">#now lets pop elements out of the stack</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="c"># val stores the top element popped out</span>
+</code></pre></div> <p>So append() func does the push operation and pop() function does the pop operation, ie deletes the top element of the stack and returns the value back.</p> <hr> <h2 id="queues">Queues</h2> <p>Queues works on FIFO(first in first out) principle.</p> <p>Lets implement Queues using Lists:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="c">#lets push elements in the queue</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">#now lets pop elements out of the queue</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c"># val stores the element popped out in FIFO style</span>
+</code></pre></div> <p>Lets implement queues using the collection module:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="c">#lets push elements in the queue</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c">#now lets pop elements out of the queue</span>
+<span class="n">val</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<span class="c"># val stores the element popped out in FIFO style</span>
+
+</code></pre></div> <hr> <h2 id="package">Package</h2> <p>Package in python is a collection of modules.</p> <p>Steps for creating package:</p> <ol> <li>Create a folder.(say a dir name calculator)</li> <li>Go inside calculator/</li> <li>Create a new file named “__init__.py”. Python is going to use this file to create a package for this dir</li> <li>Create 2 sub dirs named complex and simple. We are essentially creating/breaking the namespace to hold different functionality.</li> <li>Copy the “__init__.py” file in both the sub dirs.</li> <li>Now lets say we have 2 files name simple_calc.py in simple/ dir and complex_calc.py in complex/ dir.</li> <li>simple_calc.py contains:</li> </ol> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute</span><span class="p">():</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"This is simple"</span><span class="p">)</span>
+</code></pre></div> <ol> <li>complex_calc.py contains:</li> </ol> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compute</span><span class="p">():</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"This is simple"</span><span class="p">)</span>
+</code></pre></div> <p>Now lets use this:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">calculator.simple.simple_calc</span>
+<span class="c">#just import the module with the full extension</span>
+<span class="n">calculator</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">simple_calc</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">calculator</span> <span class="kn">import</span> <span class="n">simple</span>
+<span class="n">simple</span><span class="o">.</span><span class="n">simple_calc</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">calculator.simple.simple_calc</span> <span class="kn">import</span> <span class="n">compute</span>
+<span class="n">compute</span><span class="p">()</span>
+</code></pre></div> <p>Note the folder structure we create is the name of the package we are creating just as in Java. Also the “__init__.py” file is an empty python file. This file just lets know python this this directory is a package. So while creating packages/namespaces make sure you include this file in the sub-directories also.</p> <hr> <h2 id="randomize">Randomize</h2> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">rnd_no</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c">#generates a random no between 0-100</span>
+<span class="c">#randint is a method of random module</span>
+
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'yellow'</span><span class="p">,</span><span class="s">'white'</span><span class="p">,</span><span class="s">'blue'</span><span class="p">,</span><span class="s">'green'</span><span class="p">,</span><span class="s">'red'</span><span class="p">,</span><span class="s">'black'</span><span class="p">]</span>
+
+<span class="n">rand_color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="c">#gets a rand color from the list</span>
+<span class="c">#choice is a method of random module</span>
+</code></pre></div> <hr> <h2 id="date-and-time">Date and time</h2> <p>Python has the datetime module to help deal with timestamps in your code. Time values are represented with the time class. Times have attributes for hour, minute, second, and microsecond. They can also include time zone information. The arguments to initialize a time instance are optional, but the default of 0 is unlikely to be what you want.</p> <h3 id="time">Time:</h3> <p>Lets take a look at how we can extract time information from the datetime module. We can create a timestamp by specifying datetime.time(hour,minute,second,microsecond)</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c"># Lets show the different compoenets</span>
+
+<span class="k">print</span> <span class="n">t</span>
+<span class="k">print</span> <span class="s">'hour  :'</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">hour</span>
+<span class="k">print</span> <span class="s">'minute:'</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">minute</span>
+<span class="k">print</span> <span class="s">'second:'</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">second</span>
+<span class="k">print</span> <span class="s">'microsecond:'</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">microsecond</span>
+<span class="k">print</span> <span class="s">'tzinfo:'</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">tzinfo</span>
+
+<span class="s">"""prints the following:
+04:20:01
+hour  : 4
+minute: 20
+second: 1
+microsecond: 0
+tzinfo: None
+"""</span>
+</code></pre></div> <p>Note: A time instance only holds values of time, and not a date associated with the time. We can also check the min and max values a time of day can have in the module:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span> <span class="s">'Earliest  :'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="nb">min</span>
+<span class="k">print</span> <span class="s">'Latest    :'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="nb">max</span>
+<span class="k">print</span> <span class="s">'Resolution:'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">resolution</span>
+
+<span class="s">"""prints the following:
+Earliest  : 00:00:00
+Latest    : 23:59:59.999999
+Resolution: 0:00:00.000001
+"""</span>
+</code></pre></div> <p>The min and max class attributes reflect the valid range of times in a single day.</p> <h3 id="date">Date:</h3> <p>datetime (as you might suspect) also allows us to work with date timestamps. Calendar date values are represented with the date class. Instances have attributes for year, month, and day. It is easy to create a date representing today’s date using the today() class method. Lets see some examples:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">today</span>
+<span class="k">print</span> <span class="s">'ctime:'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">'tuple:'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">'ordinal:'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">toordinal</span><span class="p">()</span>
+<span class="k">print</span> <span class="s">'Year:'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span>
+<span class="k">print</span> <span class="s">'Mon :'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span>
+<span class="k">print</span> <span class="s">'Day :'</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span>
+
+<span class="s">"""prints the following:
+2015-09-18
+ctime: Fri Sep 18 00:00:00 2015
+tuple: time.struct_time(tm_year=2016, tm_mon=6, tm_mday=5, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=261, tm_isdst=-1)
+ordinal: 735859
+Year: 2015
+Mon : 9
+Day : 18
+"""</span>
+</code></pre></div> <p>As with time, the range of date values supported can be determined using the min and max attributes.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span> <span class="s">'Earliest  :'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="nb">min</span>
+<span class="k">print</span> <span class="s">'Latest    :'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="nb">max</span>
+<span class="k">print</span> <span class="s">'Resolution:'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">resolution</span>
+
+<span class="s">"""prints the following:
+Earliest  : 0001-01-01
+Latest    : 9999-12-31
+Resolution: 1 day, 0:00:00
+"""</span>
+</code></pre></div> <p>Another way to create new date instances uses the replace() method of an existing date. For example, you can change the year, leaving the day and month alone.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">d1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'d1:'</span><span class="p">,</span> <span class="n">d1</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="n">d1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">1990</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'d2:'</span><span class="p">,</span> <span class="n">d2</span>
+</code></pre></div> <hr> <h2 id="animations">Animations</h2> <p>We are going to use the tkinter module for the GUI. Lets walk through the window creation process.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Window</span><span class="p">(</span><span class="n">Frame</span><span class="p">):</span> <span class="c">#we are importing from Frame(a class in tkinter)</span>
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+		<span class="n">Frame</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">master</span> <span class="o">=</span> <span class="n">master</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div> <hr> <h2 id="decorators">Decorators</h2> <p>Decorators can be thought of as functions which modify the functionality of another function. They help to make your code shorter and more “Pythonic”. We often come across this in python web frameworks like Django and Flask.</p> <p>Lets create a simple function:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+	<span class="k">return</span> <span class="mi">1</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s">"This is a global variable"</span> <span class="c">#global var</span>
+</code></pre></div> <p>In python, functions create a new scope. We can use the globals() which return a dict back with the global var names as keys and values stored as values of the dict.</p> <p><code class="highlighter-rouge">print(globals().keys())</code> - Will return a list of keys,ie global vars</p> <p><code class="highlighter-rouge">print(globals()['s'])</code> - This will print ‘this is a global variable’ as globals() will return a dict and we are accessing the value of the key ‘s’</p> <p>Everything in python is an object. Even functions are objects and can be binded to variables.</p> <p><code class="highlighter-rouge">hello = func</code> - Here we are not calling func we are binding to to a var named hello</p> <p><code class="highlighter-rouge">hello()</code> - Will return 1</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">del</span> <span class="n">func</span>
+<span class="n">hello</span><span class="p">()</span> <span class="c">#will return 1, hello is not attached to func</span>
+</code></pre></div> <h3 id="functions-within-functions">Functions within functions:</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Sailesh'</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">'The hello() function has been executed'</span>
+    
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">'</span><span class="se">\t</span><span class="s"> This is inside the greet() function'</span>
+    
+    <span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"</span><span class="se">\t</span><span class="s"> This is inside the welcome() function"</span>
+    
+    <span class="k">print</span> <span class="n">greet</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">welcome</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s">"Now we are back inside the hello() function"</span>
+
+<span class="n">hello</span><span class="p">()</span> <span class="c">#prints the following string below</span>
+    <span class="s">"""
+    The hello() function has been executed
+		This is inside the greet() function
+	 	This is inside the welcome() function
+     Now we are back inside the hello() function
+    """</span>
+<span class="s">"""if we call welcome(), it will complain saying not defined. Because welcome func it defined inside the hello scope and is not avail outside
+"""</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'Sailesh'</span><span class="p">):</span>
+   
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">'</span><span class="se">\t</span><span class="s"> This is inside the greet() function'</span>
+    
+    <span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"</span><span class="se">\t</span><span class="s"> This is inside the welcome() function"</span>
+    
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">"Sailesh"</span>
+    <span class="k">return</span> <span class="n">greet</span>
+    <span class="k">else</span> 
+    <span class="k">return</span> <span class="n">welcome</span>
+
+    <span class="s">"""we are returing the func greet and not value returned by greet func, in that case it would be return greet()"""</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">hello</span><span class="p">()</span>
+<span class="c"># x is now the greet func</span>
+</code></pre></div> <p>Now lets look at the concept of decorator functions in python.</p> <h3 id="creating-a-decorator">Creating a decorator:</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#this is the decorator function which adds new functionality</span>
+<span class="k">def</span> <span class="nf">new_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">wrap_func</span><span class="p">():</span>
+        <span class="k">print</span> <span class="s">"Code would be here, before executing the func"</span>
+
+        <span class="n">func</span><span class="p">()</span>
+
+        <span class="k">print</span> <span class="s">"Code here will execute after the func()"</span>
+
+    <span class="k">return</span> <span class="n">wrap_func</span>
+
+<span class="k">def</span> <span class="nf">func_needs_decorator</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"This function is in need of a Decorator"</span>
+
+<span class="n">func_needs_decorator</span><span class="p">()</span>
+<span class="c">#will print 'This function is in need of a Decorator'</span>
+
+<span class="c"># Reassign func_needs_decorator</span>
+<span class="n">func_needs_decorator</span> <span class="o">=</span> <span class="n">new_decorator</span><span class="p">(</span><span class="n">func_needs_decorator</span><span class="p">)</span>
+
+<span class="n">func_needs_decorator</span><span class="p">()</span>
+<span class="s">"""will print:
+Code would be here, before executing the func
+This function is in need of a Decorator
+Code here will execute after the func()
+"""</span>
+</code></pre></div> <p>A decorator simply wrapps the function and modifies its behaviour. Now lets understand how we can rewrite this code using the @ symbol, which is what Python uses for Decorators.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nd">@new_decorator</span> 
+<span class="k">def</span> <span class="nf">func_needs_decorator</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"This function is in need of a Decorator"</span>
+<span class="c">#python uses @ to understand that new_decorator is the decorator func</span>
+
+<span class="n">func_needs_decorator</span><span class="p">()</span>
+<span class="s">"""will print:
+Code would be here, before executing the func
+This function is in need of a Decorator
+Code here will execute after the func()
+"""</span>
+</code></pre></div> <p>The code above is the same as <code class="highlighter-rouge">func_needs_decorator = new_decorator(func_needs_decorator)</code>. It is essentially the same thing. We are reassigning the definition of the function using the decorator function.We have now built a Decorator manually and used the @ symbol in Python to automate this.</p> <hr> <h2 id="iterators-and-generators">Iterators and Generators</h2> <p>Generators allow us to generate as we go along, instead of holding everything in memory. range() function in Python 2 and the similar xrange(), with the difference being the xrange() is a generator.</p> <p>Lets explore a little deep. Generator functions allow us to write a function that can send back a value and then later resume to pick up where it left off. This type of function is a generator in Python, allowing us to generate a sequence of values over time. The main difference in syntax will be the use of a yield statement.</p> <p>In most aspects, a generator function will appear very similar to a normal function. The main difference is when a generator function is compiled they become an object that support an iteration protocol.</p> <p>That means when they are called in your code the don’t actually return a value and then exit, the generator functions will automatically suspend and resume their execution and state around the last point of value generation.</p> <p>The main advantage here is that instead of having to compute an entire series of values upfront and the generator functions can be suspended, this feature is known as <strong><em>state suspension</em></strong>.</p> <p>Lets go ahead and see how we can create some.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Generator function for the cube of numbers (power of 3)</span>
+<span class="k">def</span> <span class="nf">gencubes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">num</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gencubes</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">x</span>
+</code></pre></div> <p>Now since we have a generator function we don’t have to keep track of every single cube we created. Generators are best for calculating large sets of results (particularly in calculations that involve loops themselves) in cases where we don’t want to allocate the memory for all of the results at the same time. Many Standard Library functions that return lists in Python 2 have been modified to return generators in Python 3.</p> <p>Lets create another example generator which calculates fibonacci numbers:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">genfibon</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s">'''
+    Generate a fibonnaci sequence up to n
+    '''</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">a</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="c">#tuple unpacking happens</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">genfibon</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">num</span>
+</code></pre></div> <p>What is this was a normal function, what would it look like?</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fibon</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+        
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="n">fibon</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c">#returns a list of first 10 fibonnaci nos</span>
+</code></pre></div> <p>Notice that if we call some huge value of n (like 100000) the second function will have to keep track of every single result, when in our case we actually only care about the previous result to generate the next one!</p> <h3 id="next-and-iter-built-in-functions">next() and iter() built-in functions:</h3> <p>A key to fully understanding generators is the next function() and the iter() function. The next function allows us to access the next element in a sequence. Lets check it out:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">simple_gen</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">x</span>
+
+<span class="c"># Assign simple_gen </span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">simple_gen</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c"># returns 0</span>
+
+<span class="k">print</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c"># returns 1</span>
+
+<span class="k">print</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c"># returns 2</span>
+
+<span class="k">print</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c"># StopIteration Error</span>
+</code></pre></div> <p>After yielding all the values next() caused a StopIteration error. What this error informs us of is that all the values have been yielded. You might be wondering that why don’t we get this error while using a for loop? The for loop automatically catches this error and stops calling next.</p> <p>Lets go ahead and check out how to use iter(). You remember that strings are iterables:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="s">'hello'</span>
+<span class="c">#Iterate over string</span>
+<span class="k">for</span> <span class="n">let</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">let</span>
+</code></pre></div> <p>But that doesn’t mean the string itself is an iterator! We can check this with the next() function:</p> <p><code class="highlighter-rouge">next(s)</code> #gives ‘TypeError: str object is not an iterator’</p> <p>Interesting, this means that a string object supports iteration, but is not a iterator. We can not directly iterate over it as we could with a generator function. The iter() function allows us to do just that!</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">s_iter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">s_iter</span><span class="p">)</span>
+<span class="c"># returns 'h'</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">s_iter</span><span class="p">)</span>
+<span class="c">#returns 'e'</span>
+</code></pre></div> <p>Great! Now we know how to convert objects that are iterable into iterators themselves!</p> <hr> <h2 id="collections">Collections</h2> <p>The collections module is a built-in module that implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.</p> <h3 id="counter">Counter:</h3> <p>Counter is a dict subclass which helps count hashable objects. Inside of it elements are stored as dictionary keys and the counts of the objects are stored as the value.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">"aabbccddd"</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">counter</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c">#returns a dict back {1:5,2:4,3:3,4:2,5:1}</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="s">"lets count the no of words in this string lets string count"</span>
+<span class="n">wordarr</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">wordarr</span><span class="p">)</span> 
+
+<span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">#show the 2 most common words</span>
+<span class="c">#will return a list if tuple pairs [('lets',2),('string',2)]</span>
+</code></pre></div> <h3 id="common-patterns-with-counter-object">Common patterns with Counter() object</h3> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>                 <span class="c"># total of all counts</span>
+<span class="n">c</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>                       <span class="c"># reset all counts</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                         <span class="c"># list unique elements</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                          <span class="c"># convert to a set</span>
+<span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>                         <span class="c"># convert to a regular dictionary</span>
+<span class="n">c</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>                       <span class="c"># convert to a list of (elem, cnt) pairs</span>
+<span class="n">Counter</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">list_of_pairs</span><span class="p">))</span>    <span class="c"># convert from a list of (elem, cnt) pairs</span>
+<span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[:</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>       <span class="c"># n least common elements</span>
+<span class="n">c</span> <span class="o">+=</span> <span class="n">Counter</span><span class="p">()</span>                  <span class="c"># remove zero and negative counts</span>
+</code></pre></div> <h3 id="defaultdict">defaultdict</h3> <p>defaultdict is a dictionary like object which provides all methods provided by dictionary but takes first argument (default_factory) as default data type for the dictionary. Using defaultdict is faster than doing the same using dict.set_default method.</p> <p>A defaultdict will never raise a KeyError. Any key that does not exist gets the value returned by the default factory.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="c">#normal dictionary</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s">'one'</span><span class="p">]</span> 
+<span class="c">#gives a key error back as the key doesnt exist</span>
+
+<span class="n">d</span>  <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<span class="c">#this is how we create a defaultdict</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s">'one'</span><span class="p">]</span> 
+<span class="s">"""wont raise an error and will return back object as that is what we passed as an arg while creating the dictionary"""</span>
+
+<span class="s">""" So this helps us in returing a defalt value back if the key doesnt exist"""</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c"># we can use lambda functions to create default dict</span>
+<span class="c"># this means that return 0 back if the key doesnt exist</span>
+</code></pre></div> <h3 id="ordereddict">OrderedDict</h3> <p>An OrderedDict is a dictionary subclass that remembers the order in which its contents are added.</p> <p>A normal dict is just an un-ordered collection, ie just a mapping and doesnt record the order in which they are stored.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span> <span class="s">'Normal dictionary:'</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'c'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'C'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'d'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'D'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'e'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'E'</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="s">"""will print:
+Normal dictionary:
+a A
+c C
+b B
+e E
+d D
+"""</span>
+</code></pre></div> <p>An Ordered Dictionary:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="k">print</span> <span class="s">'OrderedDict:'</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'c'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'C'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'d'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'D'</span>
+<span class="n">d</span><span class="p">[</span><span class="s">'e'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'E'</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="s">"""will print:
+OrderedDict:
+a A
+b B
+c C
+d D
+e E
+"""</span>
+</code></pre></div> <h3 id="equality-with-an-ordered-dictionary">Equality with an Ordered Dictionary:</h3> <p>A regular dict looks at its contents when testing for equality. An OrderedDict also considers the order the items were added.</p> <p>A normal Dictionary:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">d1</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">d1</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+<span class="n">d1</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">d2</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+<span class="n">d2</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+
+<span class="k">print</span> <span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span>
+<span class="c"># will print True</span>
+</code></pre></div> <p>An Ordered Dictionary:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">d1</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">()</span>
+<span class="n">d1</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+<span class="n">d1</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">OrderedDict</span><span class="p">()</span>
+
+<span class="n">d2</span><span class="p">[</span><span class="s">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'B'</span>
+<span class="n">d2</span><span class="p">[</span><span class="s">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'A'</span>
+
+<span class="k">print</span> <span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span>
+<span class="c">#will print False</span>
+</code></pre></div> <h2 id="namedtuple">namedtuple</h2> <p>The standard tuple uses numerical indexes to access its members, for example:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c">#returns the first element</span>
+</code></pre></div> <p>For simple use cases, this is usually enough. On the other hand, remembering which index should be used for each value can lead to errors, especially if the tuple has a lot of fields and is constructed far from where it is used.</p> <p>A namedtuple assigns names, as well as the numerical index, to each member.</p> <p>namedtuple can basically be seen as a very quick way of creating a new object/class type with some attribute fields. They are created by using the <strong><em>namedtuple()</em></strong> factory function.</p> <p>The arguments are the name of the new class and a string containing the names of the elements.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">Dog</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Dog'</span><span class="p">,</span><span class="s">'age breed name'</span><span class="p">)</span>
+<span class="c"># first arg is a strign which is the name of the class we are creating</span>
+<span class="s">"""the second arg is again a string which is a list of attributes seperated by space"""</span>
+
+<span class="c"># so we have created a dog which can have a age, breed and a name</span>
+
+<span class="c">#now lets create a dog,ie an instance</span>
+<span class="n">sam</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">breed</span><span class="o">=</span><span class="s">'Lab'</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">'Sammy'</span><span class="p">)</span>
+
+<span class="c">#another instance</span>
+<span class="n">frank</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">breed</span><span class="o">=</span><span class="s">'Shepard'</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">"Frankie"</span><span class="p">)</span>
+
+<span class="n">frank</span><span class="o">.</span><span class="n">age</span>
+<span class="c">#returns 2</span>
+
+<span class="n">frank</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c">#we can also call the atrribute by the index</span>
+<span class="c">#will return 2(age)</span>
+</code></pre></div> <hr> <h2 id="python-debugger">Python debugger</h2> <p>We have probably used a variety of print statements to try to find errors in your code. A better way of doing this is by using Python’s built-in debugger module (pdb).</p> <p>The pdb module implements an <strong><em>interactive</em></strong> debugging environment for Python programs. It includes features to let us pause our program, look at the values of variables, and watch program execution step-by-step.</p> <p>Here we will create an error on purpose, trying to add a list to an integer:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+<span class="k">print</span> <span class="n">result</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">x</span>
+<span class="k">print</span> <span class="n">result2</span>
+<span class="c"># will raise an error as we are tring to adda list to an int</span>
+</code></pre></div> <p>Lets implement a set_trace() using the pdb module. This will allow us to basically pause the code at the point of the trace and check if anything is wrong.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pdb</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+<span class="k">print</span> <span class="n">result</span>
+
+<span class="c"># Set a trace using Python Debugger</span>
+<span class="s">"""so this basically stops the execution of the program here and opens up an interactive debugger. We can use the debugger to look at the values of variables"""</span>
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+
+<span class="n">result2</span> <span class="o">=</span> <span class="n">y</span><span class="o">+</span><span class="n">x</span>
+<span class="k">print</span> <span class="n">result2</span>
+</code></pre></div> <p>We could check what the various variables were and check for errors. We can use ‘q’ to quit the debugger.</p> <hr> <h2 id="stringio-module">StringIO module</h2> <p>The StringIO module implements an in-memory <strong><em>file like object</em></strong>. This object can then be used as input or output to most functions that would expect a standard file object.</p> <p>The best way to show this is by example:</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">StringIO</span>
+
+<span class="c"># Arbitrary String</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">'This is just a normal string.'</span>
+
+<span class="c"># Use StringIO method to set as file object</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="s">"""Now we have an object f that we will be able to treat just like a file. For example:"""</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">' Second line written to file like object'</span><span class="p">)</span>
+
+<span class="c"># Reset cursor just like you would a file</span>
+<span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c"># Read again</span>
+<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="s">"""returns
+'This is just a normal string. Second line written to file like object'
+"""</span>
+</code></pre></div> <p>We can use StringIO to turn normal strings into in-memory file objects in our code. This kind of action has various use cases, especially in web scraping cases where we want to read some string we scraped as a file.</p> <hr> <h2 id="numpy">Numpy</h2> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">array_l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">],[</span><span class="mi">21</span><span class="p">,</span><span class="mi">21</span><span class="p">]],</span><span class="nb">float</span><span class="p">)</span> <span class="c">#typecasting</span>
+<span class="s">""" Even though we pass the elements in the list as ints, the float, ie second parameter ensures that all the elements are saved as floats, typecasting is handled """</span>
+
+<span class="s">""" The above code passes a list of list so essentially a 2d matrix is creating with 3 rows"""</span>
+
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">],[</span><span class="mi">21</span><span class="p">,</span><span class="mi">21</span><span class="p">]],</span><span class="nb">float</span><span class="p">)</span> <span class="c">#typecasting is handled</span>
+<span class="s">""" This is just a 1d array, ie a vector"""</span>
+
+<span class="n">vector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># we can use the normal indexing</span>
+
+<span class="n">vector</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># we can use the standard slicing techniques</span>
+
+<span class="n">array_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">],[</span><span class="mi">21</span><span class="p">,</span><span class="mi">21</span><span class="p">]],</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="s">""" We reshaping we can change the dimentionality, array_2 is same as array_l, ie it is a 2d array with 3 rows"""</span>
+
+<span class="n">array_2</span> <span class="o">*</span> <span class="mi">4</span> <span class="c">#returns a new matrix with each element multiplied by 4</span>
+
+<span class="n">array_2</span> <span class="o">*</span> <span class="n">array_2</span> 
+<span class="s">""" This is not array multiplication, this is just multiplying element by element in both the arrays"""</span>
+
+<span class="n">array_2</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="c">#gives the transpose</span>
+</code></pre></div> <h2 id="databases">Databases</h2> <p>There are many choices of dbs for python.</p> <h3 id="sqlite3">SQLite3</h3> <p>Lets make use of SQLite3(as it comes built-in with python):</p> <p>Benefits of SQLite3:</p> <ol> <li>Its reliable and simple</li> <li>Doesnt require seperate db engine</li> <li>Its self-contained</li> <li>Server-less and zero configuration</li> <li>Fully transactional</li> </ol> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="k">class</span> <span class="nc">database</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'filename'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="s">'test'</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">sql_do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'insert into {} (t1, i1) values (?, ?)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">),</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'t1'</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">'i1'</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'select * from {} where t1 = ?'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">),</span> <span class="p">(</span><span class="n">key</span><span class="p">,))</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">())</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s">'update {} set i1 = ? where t1 = ?'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'i1'</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">'t1'</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'delete from {} where t1 = ?'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">),</span> <span class="p">(</span><span class="n">key</span><span class="p">,))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">disp_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'select * from {} order by t1'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'  {}: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'t1'</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">'i1'</span><span class="p">]))</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'select * from {} order by t1'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span>
+
+    <span class="nd">@filename.setter</span>
+    <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">fn</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
+
+    <span class="nd">@filename.deleter</span>
+    <span class="k">def</span> <span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span>
+    <span class="nd">@table.setter</span>
+    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="nd">@table.deleter</span>
+    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="s">'test'</span>
+
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">database</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s">'test.db'</span><span class="p">,</span> <span class="n">table</span> <span class="o">=</span> <span class="s">'test'</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Create table test'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">sql_do</span><span class="p">(</span><span class="s">'drop table if exists test'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">sql_do</span><span class="p">(</span><span class="s">'create table test ( t1 text, i1 int )'</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Create rows'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'one'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'two'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'three'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'four'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Retrieve rows'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="s">'one'</span><span class="p">),</span> <span class="n">db</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="s">'two'</span><span class="p">))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Update rows'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'one'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">101</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">t1</span> <span class="o">=</span> <span class="s">'three'</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">103</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'Delete rows'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'one'</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'three'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span> <span class="n">main</span><span class="p">()</span>
+
+<span class="s">"""The row factory allows us to specify how the row are returned from the cursor. 
+It we use sqlite3. Row then the cursor obj contains sqlite3.Row objects instead of tuples. 
+The row objects can be looked as dictionaries."""</span>
+</code></pre></div> <h3 id="mysql">MySQL</h3> <p>Lets now deal with MySQL. Install the MySQLdb package.</p> <p><strong><em>Do the following steps:</em></strong></p> <ol> <li> <p>Install mysql</p> </li> <li> <p>Login into mysql, ie mysql -u root -p</p> </li> <li> <p>Create a db, ie create database database_name</p> </li> <li> <p>Create a user and grant all permissions on the database</p> </li> </ol> <div class="highlighter-rouge"><pre class="highlight"><code>create user 'username'@'localhost' identified by 'password' 
+use database_name;
+grant all on database_name.* to 'username'@'localhost';
+</code></pre></div> <ol> <li> <p>Create a table</p> </li> <li> <p>Fill in the table with data(use insert query)</p> </li> </ol> <p><strong><em>Python code to handle db operations:</em></strong></p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">MySQLdb</span> <span class="kn">as</span> <span class="nn">mdb</span>
+<span class="c"># The above line imports the module and creats an alias </span>
+
+<span class="n">sql_host</span> <span class="o">=</span> <span class="s">"localhost"</span>
+<span class="n">sql_username</span><span class="o">=</span><span class="s">"user_name"</span>
+<span class="n">sql_password</span><span class="o">=</span><span class="s">"python"</span>
+<span class="n">sql_database</span> <span class="o">=</span> <span class="s">"database_name"</span>
+
+<span class="n">sql_connection</span> <span class="o">=</span> <span class="n">mdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sql_host</span><span class="p">,</span> <span class="n">sql_username</span><span class="p">,</span><span class="n">sql_password</span><span class="p">,</span><span class="n">sql_database</span><span class="p">)</span>
+
+<span class="c">#print(sql_connection)</span>
+
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">sql_connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"use database_name"</span><span class="p">)</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"can pass in literally any SQL statement here"</span><span class="p">)</span>
+
+<span class="c"># cursor.execute("select * from table_name")</span>
+<span class="c"># output = cursor.fetchone() #fetches row by row and returns back tuple</span>
+
+<span class="n">sql_connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span> <span class="c">#commits the transaction</span>
+
+<span class="n">sql_connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> 
+</code></pre></div> <div class="entry-meta"> <br> <hr> <span class="entry-tags"><a href="http://127.0.0.1:4000/tags/#python" title="Pages tagged python" class="tag"><span class="term">python</span></a><a href="http://127.0.0.1:4000/tags/#advanced" title="Pages tagged advanced" class="tag"><span class="term">advanced</span></a></span> <span class="social-share"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:4000/advancedpy/" title="Share on Facebook" class="tag"> <span class="term"><i class="fa fa-facebook-square"></i> Like</span> </a> <a href="https://twitter.com/intent/tweet?text=http://127.0.0.1:4000/advancedpy/" title="Share on Twitter" class="tag"> <span class="term"><i class="fa fa-twitter-square"></i> Tweet</span> </a> <a href="https://plus.google.com/share?url=http://127.0.0.1:4000/advancedpy/" title="Share on Google+" class="tag"> <span class="term"><i class="fa fa-google-plus-square"></i> +1</span> </a> </span> <div style="clear:both"></div> </div> </div> </div> <section id="disqus_thread" class="animated fadeInUp"></section><!-- /#disqus_thread --> </header> <!-- JS --> <script src="http://127.0.0.1:4000/assets/js/jquery-1.12.0.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.dlmenu.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.goup.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.magnific-popup.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.fitvid.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/scripts.js"></script> <script type="text/javascript"> var disqus_shortname = 'evolvingperceptionsblog'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript> <!-- MathJax --> <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> </body> </html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]--><!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]--><!--[if gt IE 8]><!--><html class="no-js">
+<!--<![endif]--> <head> <meta charset="UTF-8"> <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <title>Data Structures and Algorithms – Evolving perceptions</title> <meta name="description" content="A space where I pen down my views and experiences"> <meta name="keywords" content="datastructures, algorithms, O(n), analysis"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="http://127.0.0.1:4000/assets/img/logo.jpg"> <meta name="twitter:title" content="Data Structures and Algorithms"> <meta name="twitter:description" content="Why are they so important?"> <meta name="twitter:site" content="@sailesh_dev"> <meta name="twitter:creator" content="@sailesh_dev"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="Data Structures and Algorithms"> <meta property="og:description" content="Why are they so important?"> <meta property="og:url" content="http://127.0.0.1:4000/ds-algo/"> <meta property="og:site_name" content="Evolving perceptions"> <meta property="og:image" content="http://127.0.0.1:4000/assets/img/logo.jpg"> <link rel="canonical" href="http://127.0.0.1:4000/ds-algo/"> <link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Evolving perceptions Feed"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- CSS --> <link rel="stylesheet" href="http://127.0.0.1:4000/assets/css/main.css"> <!-- JS --> <script src="http://127.0.0.1:4000/assets/js/modernizr-3.3.1.custom.min.js"></script> <!-- Favicons --> <link rel="apple-touch-icon" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-precomposed.png"> <link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-72x72.png"> <link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-114x114.png"> <link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:4000/assets/img/favicons/apple-icon-144x144.png"> <link rel="shortcut icon" type="image/png" href="http://127.0.0.1:4000/favicon.png"> <link rel="shortcut icon" href="http://127.0.0.1:4000/favicon.ico"> <!-- Background Image --> <style type="text/css">body {background-image:url(http://127.0.0.1:4000/assets/img/placeholder-big.jpg); background-repeat: no-repeat; background-size: cover; }</style> <!-- Post Feature Image --> </head> <body> <nav id="dl-menu" class="dl-menuwrapper" role="navigation"> <button class="dl-trigger">Open Menu</button> <ul class="dl-menu"> <li><a href="http://127.0.0.1:4000/">Home</a></li> <li> <a href="#">About</a> <ul class="dl-submenu"> <li> <img src="http://127.0.0.1:4000/assets/img/logo.jpg" alt="Evolving perceptions photo" class="author-photo"> <h4>Evolving perceptions</h4> <p>A space where I pen down my views and experiences</p> </li> <li><a href="http://127.0.0.1:4000/about/"><span class="btn btn-inverse">Learn More</span></a></li> <li> <a href="http://twitter.com/sailesh_dev" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a> </li> <li> <a href="http://linkedin.com/in/sailesh-dev-2822b77b" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a> </li> <li> <a href="http://github.com/saileshdev" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a> </li> </ul>
+<!-- /.dl-submenu --> </li> <li> <a href="#">Posts</a> <ul class="dl-submenu"> <li><a href="http://127.0.0.1:4000/posts/">All Posts</a></li> <li><a href="http://127.0.0.1:4000/tags/">All Tags</a></li> </ul> </li> <li><a href="http://127.0.0.1:4000/projects/">Projects</a></li> </ul>
+<!-- /.dl-menu --> </nav><!-- /.dl-menuwrapper --> <!-- Header --> <header class="header" role="banner"> <div class="wrapper animated fadeIn"> <div class="content"> <div class="post-title "> <h1>Data Structures and Algorithms</h1> <h4>28 Apr 2015</h4> <p class="reading-time"> <i class="fa fa-clock-o"></i> Reading time ~6 minutes </p>
+<!-- /.entry-reading-time --> <a class="btn zoombtn" href="http://127.0.0.1:4000/posts/"> <i class="fa fa-chevron-left"></i> </a> </div> <h2 id="install-jupyter">Install Jupyter</h2> <p>It is a web app that allows us to write python scripts.It was originally called IPython notebook or IP notebook, now they have changed their name to Jupyter(as they have started to support multiple languages other than just py). These notebooks have the extension .ipynb</p> <h3 id="steps-for-installation">Steps for installation:</h3> <ol> <li>Go to their official downloads page.</li> <li>Now run pip3 install jupyter</li> <li>Now run jupyter notebook in terminal and the notebook opens in your web browser</li> </ol> <hr> <h2 id="usage">Usage</h2> <p>We can create new cells, delete cells, copy cells, move cells</p> <p>Shift+Enter is the shortcut to run the script in the cell</p> <p>Shift+Tab write after a func will give us docstring/help info about that func</p> <p>obj. - now if we press tab it shows us the methods that can be called on the obj</p> <p>We can change the cell type to code/markdown</p> <p>We can restart a kernel if say a while/for loop goes in infinite mode and we would like to interrupt and restart it</p> <hr> <h2 id="basic-workflow">Basic workflow</h2> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="n">num2</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">num1</span><span class="o">+</span><span class="n">num2</span>
+
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">assert_equal</span>
+
+<span class="k">class</span> <span class="nc">SolutionTest</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	
+	<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sol</span><span class="p">):</span>
+		<span class="n">assert_equal</span><span class="p">(</span><span class="n">sol</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+		<span class="n">assert_equal</span><span class="p">(</span><span class="n">sol</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="mi">8</span><span class="p">)</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"ALL TEST CASES PASSED"</span><span class="p">)</span>
+
+<span class="c"># Run tests</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">SolutionTest</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
+</code></pre></div> <hr> <h2 id="algorithm-analysis">Algorithm analysis</h2> <p>Algorithm is a procedure to solve a problem</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="n">final_sum</span> <span class="o">=</span> <span class="mi">0</span>
+ 
+	<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+		<span class="n">final_sum</span> <span class="o">+=</span><span class="n">x</span>
+
+	<span class="k">return</span> <span class="n">final_sum</span>
+
+<span class="k">def</span> <span class="nf">sum2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div> <p>How can we compare the algorithms?</p> <ol> <li>Time</li> <li>Space</li> </ol> <p>We can use the %timeit magic func in jupyter to compare the time taken by functions</p> <hr> <h2 id="timing-the-code">Timing the code</h2> <p>Sometimes its important to know how long our code is taking to run, or at least know if a particular line of code is slowing down our entire project. Python has a built-in timing module to do this.</p> <p>This module provides a simple way to time small bits of Python code. It has both a Command-Line Interface as well as a callable one. It avoids a number of common traps for measuring execution times. Lets learn about timeit!</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">timeit</span>
+
+<span class="s">"""
+Lets use time it to time various methods of creating the string '0-1-2-3-.....-99'
+We'll pass two arguments the actual line we want to test encapsulated as a string and the number of times we wish to run it. Here we'll choose 10,000 runs to get some high enough numbers to comapre various methods
+"""</span>
+
+<span class="c"># For loop</span>
+<span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">'"-".join(str(n) for n in range(100))'</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="c">#returns 0.2894139289855957</span>
+
+<span class="c"># List comprehension</span>
+<span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">'"-".join([str(n) for n in range(100)])'</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="c">#returns 0.25658297538757324</span>
+
+<span class="c"># Map()</span>
+<span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">'"-".join(map(str, range(100)))'</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="c">#returns 0.16328215599060059</span>
+
+<span class="s">"""Great! We see a significant time difference by using map()! This is good to know and we shuold keep this in mind.
+"""</span>
+</code></pre></div> <p>Now lets see iPython’s magic function %timeit iPython’s %timeit will perform the code in the same line a certain number of times (loops) and will give you the fastest performance time (best of 3).</p> <p>Lets repeat the above examinations using iPython magic!</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">%</span><span class="n">timeit</span> <span class="s">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="c"># prints this: 10000 loops, best of 3: 23.8 µs per loop</span>
+
+<span class="o">%</span><span class="n">timeit</span> <span class="s">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+<span class="c">#prints this: 10000 loops, best of 3: 21.3 µs per loop</span>
+
+<span class="o">%</span><span class="n">timeit</span> <span class="s">"-"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span>
+<span class="c">#prints this: 100000 loops, best of 3: 13.5 µs per loop</span>
+</code></pre></div> <p>Great! We arrive at the same conclusion. Its also important to note that iPython will limit the amount of real time it will spend on its timeit procedure. For instance if running 100000 loops took 10 minutes, iPython would automatically reduce the number of loops to something more reasonable like 100 or 1000.</p> <hr> <h2 id="big-o-notation">Big-O notation</h2> <p>Describes how quickly runtime will grow relative to the input</p> <p>O(n) means the runtime grows linearly with the input size</p> <hr> <h2 id="big-o-examples">Big-O Examples</h2> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># O(1) constant:</span>
+<span class="k">def</span> <span class="nf">func_constant</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+	<span class="k">print</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="c"># O(n) linear:</span>
+<span class="k">def</span> <span class="nf">func_list</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+<span class="c"># This is O(n)</span>
+
+<span class="k">def</span> <span class="nf">func_list</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c">#This is O(2n) and not O(n^2), but when n -&gt; infinity</span>
+<span class="c">#O(n) = O(2n), so we can drop the constant 2 and both the algorithms have almost the same performance. This is called as dropping the insignificant constants or terms. </span>
+
+
+<span class="c"># O(n^2) quadratic:</span>
+<span class="k">def</span> <span class="nf">func_quad</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">item1</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">item2</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+			<span class="k">print</span><span class="p">(</span><span class="n">item1</span><span class="p">,</span><span class="n">item2</span><span class="p">)</span>
+</code></pre></div> <hr> <h2 id="best-case-worst-case-avg-case">Best case, Worst case, Avg case</h2> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">matcher</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span><span class="n">match</span><span class="p">):</span>
+	
+	<span class="k">for</span> <span class="n">item1</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">item1</span> <span class="o">==</span> <span class="n">match</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">True</span>
+	<span class="k">return</span> <span class="bp">False</span>
+</code></pre></div> <p>lst = [1,2,3,4,5,6,7,8,9,10]</p> <p>matcher(lst,1) #Best case O(1), match happens first time</p> <p>matcher(lst,11) #Worst case O(n), match happens after n iterations</p> <hr> <h2 id="array-sequences">Array sequences</h2> <h3 id="dynamic-arrays">Dynamic Arrays:</h3> <p>The array in python is dynamic in nature. We dont have to specify the size taken by the array in advance. We can keep growing it as ans when needed.</p> <p>They are similar to hermit crabs which hunt for bigger shells/homes when they grow in size and are in need of it.</p> <h3 id="anagram-problem">Anagram problem</h3> <p>If 2 strings can be written with the same letters then they are anagrams. Eg: “Clint Eastwood”, “old west action” Go given 2 strings check if they are anagrams?(Ignore case)</p> <p>If each letters frequency are the same in both the strings then thay are anagrams of each other, ie if 2 string are equal to each other after sorting then they are anagrams.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">anagram2</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
+	<span class="c">#remove whitespace and turn to lower case</span>
+	<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+	<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+   <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+<span class="c">#Lets solve this without sorting func manually</span>
+
+<span class="k">def</span> <span class="nf">anagram</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
+	<span class="c">#remove whitespace and turn to lower case</span>
+	<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+	<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+	<span class="c">#if the no of letters are not same they we can immediately say they #are not anagrams</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">False</span>
+
+	<span class="c">#Now lets use a dictionary to count the frequency of each letter </span>
+	<span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+			<span class="n">count</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">count</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="c"># So lets loop through each letter in str2 and sub 1 for each letter </span>
+	<span class="c"># Finally if all the values in the dict are zero then anagrams</span>
+
+	<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s2</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+			<span class="n">count</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">-=</span><span class="mi">1</span>
+		<span class="k">else</span>
+			<span class="n">count</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+			<span class="c">#set this to 1 so that the next for loop retuens False</span>
+
+	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">count</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+			<span class="k">return</span> <span class="bp">False</span>
+
+	<span class="k">return</span> <span class="bp">True</span>
+</code></pre></div> <h3 id="array-sum-problem">Array Sum problem</h3> <p>Given an integer array, output all the unique pairs that sum up to a specific value k. So the input: pair_sum([1,3,2,2],4), would return 2 pairs:(1,3) (2,2)</p> <p>NOTE: FOR TESTING PURPOSES, CHANGE YOUR FUNCTION SO IT OUTPUTS THE NUMBER OF PAIRS</p> <p><strong><em>Solution:</em></strong> The O(N) algorithm uses the set data structure. We perform a linear pass from the beginning and for each element we check whether k-element is in the set of seen numbers. If it is, then we found a pair of sum k and add it to the output. If not, this element doesn’t belong to a pair yet, and we add it to the set of seen elements. The algorithm is really simple once we figure out using a set. The complexity is O(N) because we do a single linear scan of the array, and for each element we just check whether the corresponding number to form a pair is in the set or add the current element to the set. Insert and find operations of a set are both average O(1), so the algorithm is O(N) in total.</p> <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pair_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
+    
+    <span class="c"># Sets for tracking</span>
+    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    
+    <span class="c"># For every number in array</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        
+        <span class="c"># Set target difference</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">k</span><span class="o">-</span><span class="n">num</span>
+        
+        <span class="c"># Add it to set if target hasn't been seen</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># Add a tuple with the corresponding pair</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">target</span><span class="p">),</span>  <span class="nb">max</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">target</span><span class="p">))</span> <span class="p">)</span>
+    
+    
+    <span class="c"># FOR TESTING</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="c"># Nice one-liner for printing output</span>
+    <span class="c">#return '\n'.join(map(str,list(output)))</span>
+
+<span class="s">"""
+RUN THIS CELL TO TEST YOUR SOLUTION
+"""</span>
+<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">assert_equal</span>
+
+<span class="k">class</span> <span class="nc">TestPair</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">sol</span><span class="p">):</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">sol</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">10</span><span class="p">),</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">sol</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">sol</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="mi">4</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">'ALL TEST CASES PASSED'</span>
+        
+<span class="c">#Run tests</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">TestPair</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">pair_sum</span><span class="p">)</span>
+
+</code></pre></div> <div class="entry-meta"> <br> <hr> <span class="entry-tags"><a href="http://127.0.0.1:4000/tags/#datastructures" title="Pages tagged datastructures" class="tag"><span class="term">datastructures</span></a><a href="http://127.0.0.1:4000/tags/#algorithms" title="Pages tagged algorithms" class="tag"><span class="term">algorithms</span></a><a href="http://127.0.0.1:4000/tags/#O(n)" title="Pages tagged O(n)" class="tag"><span class="term">O(n)</span></a><a href="http://127.0.0.1:4000/tags/#analysis" title="Pages tagged analysis" class="tag"><span class="term">analysis</span></a></span> <span class="social-share"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:4000/ds-algo/" title="Share on Facebook" class="tag"> <span class="term"><i class="fa fa-facebook-square"></i> Like</span> </a> <a href="https://twitter.com/intent/tweet?text=http://127.0.0.1:4000/ds-algo/" title="Share on Twitter" class="tag"> <span class="term"><i class="fa fa-twitter-square"></i> Tweet</span> </a> <a href="https://plus.google.com/share?url=http://127.0.0.1:4000/ds-algo/" title="Share on Google+" class="tag"> <span class="term"><i class="fa fa-google-plus-square"></i> +1</span> </a> </span> <div style="clear:both"></div> </div> </div> </div> <section id="disqus_thread" class="animated fadeInUp"></section><!-- /#disqus_thread --> </header> <!-- JS --> <script src="http://127.0.0.1:4000/assets/js/jquery-1.12.0.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.dlmenu.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.goup.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.magnific-popup.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/jquery.fitvid.min.js"></script> <script src="http://127.0.0.1:4000/assets/js/scripts.js"></script> <script type="text/javascript"> var disqus_shortname = 'evolvingperceptionsblog'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); (function () { var s = document.createElement('script'); s.async = true; s.type = 'text/javascript'; s.src = '//' + disqus_shortname + '.disqus.com/count.js'; (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s); }()); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript> <!-- MathJax --> <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> </body> </html>
