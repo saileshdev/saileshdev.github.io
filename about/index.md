@@ -15,6 +15,7 @@ My dream is to identify real social problems and address them. Philanthrophy is 
 I am currently pursuing bachelors in Computer Science & Engineering at VIT University, India. I am a full-stack developer and a machine learning enthusiast. I push most of my code to GitHub and a true believer of "open-source technologies". I love apple drinks and have a weakness for the taste of caffeine.
 
 My favourite quote:
+
 > “Rather, ten times, die in the surf, heralding the way to a new world, than stand idly on the shore.” - Florence Nightingale
 
 
