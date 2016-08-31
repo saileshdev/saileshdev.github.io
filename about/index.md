@@ -14,7 +14,7 @@ I am currently pursuing bachelors in Computer Science & Engineering at VIT Unive
 
 My favourite quote:
 
-> “Rather, ten times, die in the surf, heralding the way to a new world, than stand idly on the shore.” - Florence Nightingale
+> "If something is important enough, even if the odds are against you, you should still do it" - Elon Musk
 
 
 
