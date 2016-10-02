@@ -161,8 +161,8 @@ set1= {x ** 2 for x in range(10)}
 
 dict1 = {x:x+1 for x in range(10)}
 
-dic2 = {x:v**2 for k,v in zip([a,b,c],range(3))}
-#{a:0,b:1,c:2}
+dic2 = {k:v**2 for k,v in zip(['a','b','c'],range(3))}
+#{'a':0,'b':1,'c':2}
 
 ---
 
